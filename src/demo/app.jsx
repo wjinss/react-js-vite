@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import { getRandomCount, setAppColor, setDocumentTitle } from './utils'
-import Shortcut from './shortcut'
-import Output from './output'
 import Logo from './logo'
+import Output from './output'
+import Shortcut from './shortcut'
+import { getRandomCount, setAppColor, setDocumentTitle } from './utils'
 import './app.css'
 
 const MIN = 50

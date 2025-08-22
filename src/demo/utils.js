@@ -13,5 +13,5 @@ export function setAppColor() {
 const ORIGIN_TITLE = document.title
 
 export function setDocumentTitle(targetCount) {
-  document.title = `${ORIGIN_TITLE} (${targetCount})`
+  document.title = `(${targetCount}) ${ORIGIN_TITLE}`
 }

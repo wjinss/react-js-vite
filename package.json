@@ -2,11 +2,14 @@
   "private": true,
   "type": "module",
   "name": "react-js-vite",
-  "description": "리액트 빌드 환경을 구성합니다.",
+  "description": "리액트 템플릿(js + Vite)",
   "version": "1.0.0",
   "bun-create": {
     "preinstall": [],
-    "postinstall": [],
+    "postinstall": [
+      "bunx rimraf -rf .git",
+      "bunx rimraf -rf dist"
+    ],
     "start": "bun run dev"
   },
   "scripts": {
@@ -16,14 +19,18 @@
     "format:check": "prettier --check --cache \"src/**/*.{js,jsx,json}\"",
     "format:fix": "prettier --write --cache --list-different \"src/**/*.{js,jsx,json}\"",
     "lint:check": "eslint \"src/**/*.{js,jsx,json}\" --cache --cache-location ./node_modules/.cache/eslint/.eslintcache",
-    "lint:fix": "bun lint:check --fix"
+    "lint:fix": "bun lint:check --fix",
+    "clean": "rimraf -rf dist"
   },
   "dependencies": {
+    "immer": "^10.1.1",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "use-immer": "^0.11.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@tailwindcss/vite": "^4.1.12",
     "@types/node": "^24.2.1",
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
@@ -36,6 +43,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "globals": "^16.3.0",
     "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.12",
     "terser": "^5.43.1",
     "vite": "^7.1.2",
     "vite-plugin-compression": "^0.5.1"
